@@ -1,0 +1,125 @@
+.hud-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  color: white;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.hud-panel {
+  pointer-events: auto;
+  background: rgba(0, 0, 0, 0.85); /* Darker for better contrast */
+  padding: 3rem 4rem; /* Larger padding */
+  border-radius: 24px;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  min-width: 320px;
+}
+
+.title {
+  font-size: 4rem; /* Larger Title */
+  font-weight: 900;
+  background: linear-gradient(to right, #00FFFF, #FF00FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  line-height: 1.1;
+  text-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+}
+
+.score {
+  font-size: 6rem; /* Huge Score during game */
+  font-weight: 900;
+  position: absolute;
+  top: 10%; /* Move score up a bit */
+  width: 100%;
+  text-align: center;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+}
+
+.score-label {
+  font-size: 1.5rem;
+  color: #ccc;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.score-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.btn {
+  background: white;
+  color: black;
+  border: none;
+  padding: 1.2rem 3rem; /* Larger button */
+  font-size: 1.5rem; /* Larger text */
+  font-weight: 800;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+  background: #f0ffff;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.instruction {
+  font-size: 1.2rem;
+  opacity: 0.7;
+  margin-top: 1.5rem;
+  font-weight: 500;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+  .title { font-size: 3rem; }
+  .hud-panel { padding: 2rem; width: 80%; }
+  .btn { padding: 1rem 2rem; font-size: 1.2rem; }
+  .score { font-size: 4rem; }
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+}
+
+.pulse-animation {
+    animation: pulse-glow 2s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+    0% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 255, 255, 0.4); }
+    50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(255, 0, 255, 0.6); }
+    100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 255, 255, 0.4); }
+}
